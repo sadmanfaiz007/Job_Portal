@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Job Categories</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fc;
+        }
+
+        /* Admin Navigation */
+        #admin-nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #343a40;
+            padding: 15px;
+            color: white;
+        }
+        #admin-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        #admin-nav a:hover {
+            background-color: #495057;
+        }
+
+        /* Section Styles */
+        .admin-section {
+            padding: 20px;
+            text-align: center;
+        }
+        .admin-section h1 {
+            font-size: 2.5rem;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        /* Form Styles */
+        .category-form {
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .category-form h2 {
+            font-size: 1.8rem;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .category-form form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .category-form input, .category-form textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        .category-form .form-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .category-form .form-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Table Styles */
+        .category-table {
+            margin: 20px auto;
+            width: 90%;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .category-table h2 {
+            font-size: 1.8rem;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .category-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .category-table th, .category-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .category-table th {
+            background-color: #007bff;
+            color: white;
+        }
+        .category-table td {
+            background-color: #f8f9fc;
+        }
+        .category-table tr:hover td {
+            background-color: #f1f3f5;
+        }
+
+        /* Action Buttons */
+        .action-btn {
+            padding: 8px 12px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .action-btn.edit {
+            background-color: #ffc107;
+            color: white;
+        }
+        .action-btn.edit:hover {
+            background-color: #e0a800;
+        }
+        .action-btn.delete {
+            background-color: #dc3545;
+            color: white;
+        }
+        .action-btn.delete:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Admin Navigation -->
+<div id="admin-nav">
+    <a href="admin-dashboard.html">Dashboard</a>
+    <a href="admin-users.html">Users</a>
+    <a href="admin-jobs.html">Jobs</a>
+    <a href="admin-categories.html">Categories</a>
+    <a href="logout.php">Logout</a>
+</div>
+
+<section class="admin-section">
+    <h1>Manage Job Categories</h1>
+
+    <!-- Add New Category -->
+    <div class="category-form">
+        <h2>Add New Category</h2>
+        <form action="add-category.php" method="POST">
+            <input type="text" name="category_name" placeholder="Category Name" required>
+            <textarea name="category_description" placeholder="Category Description" rows="3" required></textarea>
+            <button type="submit" class="form-btn">Add Category</button>
+        </form>
+    </div>
+
+    <!-- Existing Categories -->
+    <div class="category-table">
+        <h2>Existing Categories</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example Row -->
+                <tr>
+                    <td>1</td>
+                    <td>Software Development</td>
+                    <td>Jobs related to software and IT development.</td>
+                    <td>
+                        <button class="action-btn edit">Edit</button>
+                        <button class="action-btn delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Marketing</td>
+                    <td>Jobs in sales, advertising, and marketing.</td>
+                    <td>
+                        <button class="action-btn edit">Edit</button>
+                        <button class="action-btn delete">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Job Portal Admin Panel</p>
+</footer>
+
+</body>
+</html>

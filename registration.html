@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            background-color: #eef2f3;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"], input[type="email"], input[type="password"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .register-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            text-align: center;
+        }
+        .register-button:hover {
+            background-color: #0056b3;
+        }
+        .info {
+            font-size: 0.9em;
+            color: #777;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Register</h1>
+    <form action="register.php" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="Create a password" required>
+
+        <label for="user_role">User Role:</label>
+        <select name="user_role" required>
+            <option value="">Select a role</option>
+            <option value="seeker">Job Seeker</option>
+            <option value="employer">Employer</option>
+            <option value="admin">Admin</option>
+        </select>
+
+        <input type="submit" value="Register" class="register-button">
+    </form>
+    <p class="info">Already have an account? <a href="login.html">Login here</a>.</p>
+</div>
+
+<footer>
+    <p>© 2024 Job Portal</p>
+</footer>
+
+</body>
+</html>

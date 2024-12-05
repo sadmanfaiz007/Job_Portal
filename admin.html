@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+
+<!-- Admin Navigation -->
+<div id="admin-nav">
+    <?php include 'modules/admin-nav.php'; ?>
+</div>
+
+<!-- Dashboard Section -->
+<section class="admin-dashboard">
+    <h1>Admin Dashboard</h1>
+    <p>Welcome, Admin! Use the tools below to manage the platform effectively.</p>
+    
+    <div class="admin-actions">
+        <a href="admin-users.php" class="admin-card">
+            <h2>Users</h2>
+            <p>Manage registered users.</p>
+        </a>
+        <a href="admin-jobs.php" class="admin-card">
+            <h2>Job Postings</h2>
+            <p>Manage job advertisements.</p>
+        </a>
+        <a href="admin-categories.php" class="admin-card">
+            <h2>Categories</h2>
+            <p>Update job categories.</p>
+        </a>
+        <a href="admin-settings.php" class="admin-card">
+            <h2>Settings</h2>
+            <p>Configure website settings.</p>
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <?php include 'modules/footer.php'; ?>
+</footer>
+
+</body>
+</html>
